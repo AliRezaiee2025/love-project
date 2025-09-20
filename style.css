@@ -1,0 +1,341 @@
+/* پایه */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+   height: 100%;
+   width: 100%;
+   overflow: hidden;
+
+  }
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background: #fee5f0;
+  color: #222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x: hidden;
+}
+
+/* HERO (عکس تمام صفحه) */
+#hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* تصویر به صورت cover */
+/* #bgImage {
+  position: absolute;
+  inset: 0;
+  width: 50%;
+  height: 65%;
+  top: 8rem;
+  border-radius: 25px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin: auto;
+  user-select: none;
+  z-index: 1;
+  object-fit: fill;
+} */
+
+#bgImage {
+  display: block;
+  max-width: 90%;
+  height: auto;
+  margin: 8rem auto 0 auto; /* بالا: 8rem، افقی وسط */
+  border-radius: 25px;
+  object-fit: cover;
+  z-index: 1;
+  user-select: none;
+}
+
+/* متن بالای عکس */
+.title {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  color: #dc0606;
+  font-size: 30px;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  z-index: 4;
+}
+
+
+.btn {
+  padding: 12px 25px;
+  margin-top: 1rem;
+  
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#yesBtn {
+  margin-right: 42%;
+  background-color: #28a745;
+  color: white;
+}
+
+#noBtn {
+  margin-right: 20px;
+  background-color: #dc3545;
+  color: white;
+  position: absolute;
+  z-index: 10003;
+}
+
+
+
+/* متن خوش آمدگویی */
+#welcome {
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 25px;
+  color: #d63384;
+  z-index: 1002;
+}
+
+
+
+#videoSection {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: #ffffff;
+  align-items: center;     
+  justify-content: center; 
+  flex-direction: column;  
+}
+
+.video-wrapper {
+  max-width: 90%;
+  max-height: 70vh;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+video {
+  display: block;
+  max-width: 90%;
+  max-height: 70vh;   
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  background: black;
+  margin: auto;
+  z-index: 1001;
+}
+/* کانواس کنفیِتی روی کل صفحه */
+#confettiCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20000;
+  pointer-events: none;
+  display: none; 
+}
+
+.footer{
+  position: fixed;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  color: #555;
+  z-index: 10005;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ===== واکنش‌گرایی برای موبایل و Galaxy S9 ===== */
+@media only screen and (max-width: 480px) {
+  
+  /* Hero: عکس و متن */
+  #hero {
+    height: auto;
+    padding: 150px 10px;
+  }
+
+  #bgImage {
+    width: 90%;
+    height: auto;
+    top: 4rem;
+    margin: 0 auto;
+    border-radius: 15px;
+  }
+
+  .title {
+    font-size: 20px;
+    top: 60px;
+  }
+
+  /* دکمه‌ها */
+  #controls {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+  }
+
+  .btn {
+    width: 25%;
+    margin: 10px 0;
+    font-size: 16px;
+    padding: 10px 5px;
+  }
+
+  #yesBtn {
+    margin-right: 25%;
+    background-color: #28a745;
+    color: white;
+  }
+  
+  #noBtn {
+    margin-right: 50%;
+    background-color: #dc3545;
+    color: white;
+    position: absolute;
+    z-index: 10003;
+  }
+  
+
+  /* ویدئو */
+  #videoSection {
+    padding: 10px;
+  }
+
+  .video-wrapper {
+    max-width: 90%;
+    max-height: 60vh;
+  }
+
+  video {
+    max-width: 100%;
+    max-height: 60vh;
+  }
+
+  #welcome {
+    top: 5rem;
+    font-size: 21px;
+    font-weight: bold;
+  }
+
+  /* Footer */
+  .footer {
+    font-size: 12px;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bolder;
+  }
+}
+
+/* ===== واکنش‌گرایی برای تبلت‌ها ===== */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  
+  #bgImage {
+    width: 80%;
+    height: auto;
+    top: 7rem;
+  }
+
+  .title {
+    font-size: 28px;
+    top: 60px;
+  }
+
+  .btn {
+    width: 20%;
+    font-size: 20px;
+    margin: 15px 0;
+  }
+
+  #yesBtn {
+    margin-right: 25%;
+    background-color: #28a745;
+    color: white;
+  }
+  
+  #noBtn {
+    margin-right: 5%;
+    background-color: #dc3545;
+    color: white;
+    position: absolute;
+    z-index: 10003;
+  }
+
+  .video-wrapper {
+    max-width: 80%;
+    max-height: 65vh;
+  }
+
+  video {
+    max-width: 100%;
+    max-height: 65vh;
+  }
+
+  #welcome {
+    top: 5rem;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .footer {
+    font-size: 22px;
+    bottom: 100px;
+  }
+}
+
+/* ===== واکنش‌گرایی برای دسکتاپ کوچک ===== */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  
+  #bgImage {
+    width: 70%;
+    height: auto;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .btn {
+    width: 200px;
+    font-size: 18px;
+  }
+
+  .video-wrapper {
+    max-width: 70%;
+    max-height: 70vh;
+  }
+
+  video {
+    max-width: 100%;
+    max-height: 70vh;
+  }
+
+  .footer {
+    font-size: 14px;
+  }
+}
+
+

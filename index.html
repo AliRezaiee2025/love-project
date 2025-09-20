@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>پیشنهاد ویژه</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- صفحهٔ اول: عکس تمام‌صفحه + دکمه‌ها -->
+  <main id="hero" aria-label="صفحه پیشنهاد">
+
+    <img id="bgImage" src="./assets/photo.jpg" alt="عکس پیشنهاد (جایگزین کنید)" />
+
+    
+
+    <h1 class="title">با من ازدواج می‌کنی؟ 💍</h1>
+
+    <div id="controls" aria-hidden="false">
+      <button class="btn" id="yesBtn">بلی ✅</button>
+    <button class="btn" id="noBtn">نخیر ❌</button>
+    </div>
+  </main>
+
+  <!-- بخش ویدئو (مخفی تا زمان کلیک) -->
+  <section id="videoSection" aria-hidden="true">
+    <div id="welcome">به زندگیم خوش آمدی ❤</div>
+
+    <div class="video-wrapper">
+      <!-- اگر آدرس فایل ویدئو را در index.html می‌گذاری، آن را همین‌جا تغییر بده -->
+      <video id="celebrationVideo" controls playsinline preload="metadata">
+
+        <source src="./assets/InShot.mp4" type="video/mp4">
+        مرورگر شما از ویدئو پشتیبانی نمی‌کند.
+      </video>
+    </div>
+
+   
+  </section>
+     <!-- کانواس کنفیِتی -->
+     <canvas id="confettiCanvas"></canvas>
+   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+
+  <p class="footer">Designed by Ali Rezaiee</p>
+  
+</body>
+</html>
